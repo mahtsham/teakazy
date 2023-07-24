@@ -1,10 +1,4 @@
-<p style="color: green"><%= notice %></p>
+<h2> Show page</h1>
+<p><strong>title: <%= @article.title%></strong></p>
+<p><strong>description: <%= @article.description%></strong></p>
 
-<%= render @article %>
-
-<div>
-  <%= link_to "Edit this article", edit_article_path(@article) %> |
-  <%= link_to "Back to articles", articles_path %>
-
-  <%= button_to "Destroy this article", @article, method: :delete %>
-</div>
