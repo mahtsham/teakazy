@@ -22,7 +22,10 @@ class ArticlesController < ApplicationController
 
   # POST /articles or /articles.json
   def create
-    render plain: params[:article]
+    @article = Article.new(params.require(:article).permit(:title, :description))
+    @article.save
+    #redirect_to article_path(@article) is same as below
+    redirect_to @article
 
   end
 
