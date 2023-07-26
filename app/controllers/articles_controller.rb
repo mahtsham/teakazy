@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/new
   def new
-    
+    @article = Article.new
   end
 
   # GET /articles/1/edit
@@ -23,9 +23,14 @@ class ArticlesController < ApplicationController
   # POST /articles or /articles.json
   def create
     @article = Article.new(params.require(:article).permit(:title, :description))
-    @article.save
+    if @article.save
+      flash[:notice] = "Article is successfuly saved"
     #redirect_to article_path(@article) is same as below
-    redirect_to @article
+      redirect_to @article
+    else
+      render 'new'
+
+    end
 
   end
 
