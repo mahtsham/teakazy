@@ -1,5 +1,13 @@
 <h1>This is new article</h1>
-
+  <% if @article.errors.any? %>
+    <h2> You have some invalid fields</h2>
+    <% @article.errors.full_messages.each do |msg|%>
+    
+    <ul>
+      <li><%= msg %></li>
+    </ul>
+    <%end%>
+  <%end%>
 <%= form_with scope: :article, data: { turbo: false },  url: articles_path, local: true do |f|%>
   
   <%= f.label :title%>
