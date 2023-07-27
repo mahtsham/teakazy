@@ -1,22 +1,4 @@
 <h1>This is new article</h1>
-  <% if @article.errors.any? %>
-    <h2> You have some invalid fields</h2>
-    <% @article.errors.full_messages.each do |msg|%>
-    
-    <ul>
-      <li><%= msg %></li>
-    </ul>
-    <%end%>
-  <%end%>
-<%= form_with(model: @article, local: true) do |f|%>
-  
-  <%= f.label :title%>
-  <%= f.text_field :title%><br/>
-
-  <%= f.label :description%>
-  <%= f.text_area :description%><br/>
-
-  <%= f.submit %>
-<%end%>
+<%= render 'form' %>
 
 <%= link_to 'Cancel and return to home', articles_path %>

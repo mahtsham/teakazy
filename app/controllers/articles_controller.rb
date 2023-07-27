@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[ show edit update destroy ]
-
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
   # GET /articles or /articles.json
   def index
     @article = Article.all
@@ -8,7 +7,6 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1 or /articles/1.json
   def show
-    @article = Article.find(params[:id])
   end
 
   # GET /articles/new
@@ -18,12 +16,11 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
-    @article = Article.find(params[:id])
   end
 
   # POST /articles or /articles.json
   def create
-    @article = Article.new(params.require(:article).permit(:title, :description))
+    @article = Article.new(article_params)
     if @article.save
       flash[:notice] = "Article is successfuly saved"
     #redirect_to article_path(@article) is same as below
@@ -38,8 +35,7 @@ class ArticlesController < ApplicationController
 
   # PATCH/PUT /articles/1 or /articles/1.json
   def update
-    @article = Article.find(params[:id])
-    if @article.update(params.require(:article).permit(:title, :description))
+    if @article.update(article_params)
       flash[:notice] = "Article updated successfully"
       redirect_to @article
     else
@@ -51,19 +47,18 @@ class ArticlesController < ApplicationController
 
   # DELETE /articles/1 or /articles/1.json
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
     redirect_to articles_path
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_article
-      @article = Article.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def article_params
-      params.require(:article).permit(:title, :description)
-    end
+  def set_article
+    @article = Article.find(params[:id])
+  end
+  
+  def article_params
+    params.require(:article).permit(:title, :description)
+  end
+  
 end
