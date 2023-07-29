@@ -1,0 +1,12 @@
+@import 'bootstrap';
+@font-face {
+    font-family: 'bootstrap-icons';
+    src: font-url('bootstrap-icons/bootstrap-icons.eot');
+    src: font-url('bootstrap-icons/bootstrap-icons.eot?#iefix') format('embedded-opentype'),
+         font-url('bootstrap-icons/bootstrap-icons.woff2') format('woff2'),
+         font-url('bootstrap-icons/bootstrap-icons.woff') format('woff'),
+         font-url('bootstrap-icons/bootstrap-icons.ttf') format('truetype'),
+         font-url('bootstrap-icons/bootstrap-icons.svg#bootstrap-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }

@@ -6,6 +6,10 @@ ruby "2.7.3"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.6"
 
+gem "sassc-rails"
+
+gem 'bootstrap'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
@@ -78,3 +82,5 @@ group :test do
 end
 
 gem "cssbundling-rails", "~> 1.2"
+
+gem "jsbundling-rails", "~> 1.1"
