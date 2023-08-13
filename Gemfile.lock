@@ -78,6 +78,7 @@ GEM
       popper_js (>= 2.11.6, < 3)
       sassc-rails (>= 2.0.0)
     builder (3.2.4)
+    byebug (9.1.0)
     capybara (3.39.2)
       addressable
       matrix
@@ -139,6 +140,8 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.3-x86_64-linux)
       racc (~> 1.4)
+    pg (0.21.0)
+    popper_js (2.11.7)
     public_suffix (5.0.3)
     puma (5.6.6)
       nio4r (~> 2.0)
@@ -233,11 +236,15 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bootstrap
+  byebug (~> 9.0, >= 9.0.5)
   capybara
   cssbundling-rails (~> 1.2)
   debug
   importmap-rails
   jbuilder
+  jsbundling-rails (~> 1.1)
+  pg (~> 0.21.0)
   puma (~> 5.0)
   rails (~> 7.0.6)
   sassc-rails
